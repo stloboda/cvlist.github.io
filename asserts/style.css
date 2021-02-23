@@ -1,0 +1,379 @@
+            header {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas: "burger" "nav";
+            }
+            
+            .header-burger {
+                grid-area: burger;
+                display: none;
+            }
+            
+            nav {
+                grid-area: nav;
+                justify-self: center;
+                border-bottom: 1px solid #828282;
+                ;
+            }
+            
+            .bar {
+                list-style: none;
+                display: flex;
+            }
+            
+            ul {
+                padding: 0;
+            }
+            
+            .bar li {
+                margin: 20px;
+            }
+            
+            .bar a {
+                text-decoration: none;
+                color: #828282;
+                /* padding: 10px; */
+            }
+            
+            .bar a:hover {
+                color: #000000;
+            }
+            
+            main {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas: ". img ."". info ." ". text ." ". portf ." ". contact .";
+                grid-column-gap: 50px;
+                grid-row-gap: 50px;
+            }
+            
+            .name-path {
+                grid-area: img;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "img-main name";
+                align-content: center;
+                /* text-align: center; */
+                /* border: 1px solid black; */
+            }
+            
+            .main-img {
+                grid-area: img-main;
+                text-align: center;
+            }
+            
+            .main-name {
+                grid-area: name;
+                text-align: center;
+            }
+            
+            .main-name h4 {
+                color: #000000;
+                font-size: 40px;
+            }
+            
+            .main-name p {
+                font-size: 20px;
+            }
+            
+            .about-path {
+                grid-area: info;
+                text-align: center;
+                /* border: 1px solid black; */
+                padding: 30px 0;
+            }
+            
+            .about-path-info h2 {
+                font-size: 37px;
+                color: #000000;
+            }
+            
+            .about-path-info p {
+                font-size: 18px;
+                color: #000000;
+            }
+            
+            .skills {
+                grid-area: text;
+                /* border: 1px solid black; */
+                text-align: center;
+                padding: 50px 0;
+            }
+            
+            .technology {
+                display: flex;
+                justify-content: center;
+                padding: 50px 0;
+            }
+            
+            .technology-item {
+                padding: 0 10px;
+            }
+            
+            .skills-text h2 {
+                font-size: 37px;
+                color: #000000;
+            }
+            
+            .skills-text p {
+                font-size: 18px;
+                color: #000000;
+            }
+            
+            .portfolio {
+                grid-area: portf;
+                padding-bottom: 50px;
+            }
+            
+            .portfolio-path {
+                text-align: center;
+                /* border: 1px solid black; */
+                padding: 50px 0;
+            }
+            
+            .portfolio-path h2 {
+                font-size: 37px;
+                color: #000000;
+            }
+            
+            .portfolio-path p {
+                font-size: 18px;
+                color: #000000;
+            }
+            
+            .portfolio-path a {
+                color: #000000;
+            }
+            
+            .contacts {
+                grid-area: contact;
+                /* border: 1px solid black; */
+                text-align: center;
+                padding: 50px 0 150px 0;
+            }
+            
+            .contacts-info h2 {
+                font-size: 37px;
+                color: #000000;
+            }
+            
+            .contacts-info p {
+                font-size: 18px;
+                color: #000000;
+            }
+            
+            .button-send {
+                background-color: black;
+                margin-top: 20px;
+                border: none;
+                color: white;
+                font-size: 16px;
+                border-radius: 25px;
+                height: 50px;
+                width: 150px;
+            }
+            
+            .button-send:hover {
+                background-color: #828282;
+                color: black;
+            }
+            
+            footer {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas: "icons";
+                grid-gap: 50px;
+            }
+            
+            .social_icons {
+                grid-area: icons;
+                /* border: 1px solid black; */
+                padding: 50px 0 50px 0;
+                text-align: center;
+                margin-top: 50px;
+                list-style: none;
+            }
+            
+            .social_icons a {
+                padding: 7px;
+                text-decoration: none;
+            }
+            
+            .git,
+            .face,
+            .inst,
+            .link {
+                font-size: 35px;
+                color: black;
+            }
+            
+            i:hover {
+                -webkit-transform: scale(1.2);
+                -ms-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+            
+            @media(max-width: 623px) {
+                body.lock {
+                    overflow: hidden;
+                }
+                header {
+                    position: relative;
+                }
+                .header-burger {
+                    display: flex;
+                    grid-area: burger;
+                    position: fixed;
+                    width: 30px;
+                    height: 20px;
+                    z-index: 3;
+                }
+                .header-burger span {
+                    position: absolute;
+                    background-color: black;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    top: 9px;
+                    z-index: 1;
+                }
+                .header-burger::before,
+                .header-burger::after {
+                    content: "";
+                    background-color: black;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    left: 0;
+                }
+                .header-burger:before {
+                    top: 0;
+                }
+                .header-burger:after {
+                    bottom: 0;
+                }
+                .header-burger.active span {
+                    transform: scale(0);
+                }
+                .header-burger.active:before {
+                    transform: rotate(45deg);
+                    top: 9px;
+                }
+                .header-burger.active:after {
+                    transform: rotate(-45deg);
+                    top: 9px;
+                }
+                /* nav.hidden {
+        overflow: hidden;
+    } */
+                nav {
+                    display: block;
+                    position: fixed;
+                    top: -100%;
+                    left: 0;
+                    height: 60%;
+                    width: 620px;
+                    margin: 0;
+                    text-align: left;
+                    background-color: rgba(247, 243, 235, 0.9);
+                }
+                nav.active {
+                    top: 0;
+                }
+                .bar {
+                    display: block;
+                    margin-top: 100px;
+                }
+                .bar a {
+                    color: #828282;
+                }
+                .bar a:hover {
+                    color: #000000;
+                }
+            }
+            
+            @media(max-width: 415px) {
+                .name-path {
+                    display: grid;
+                    grid-template-columns: 2fr;
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-areas: "img-main" "name";
+                    margin-top: 70px;
+                    justify-content: center;
+                }
+                .main-img {
+                    grid-area: img-main;
+                    width: 80%;
+                    margin-left: 20px;
+                }
+                .main-name {
+                    grid-area: name;
+                    width: 80%;
+                    margin-left: 20px;
+                }
+                .main-name h4 {
+                    font-size: 40px;
+                }
+                .main-name p {
+                    font-size: 25px;
+                }
+                .about-path {
+                    margin-left: 20px;
+                    width: 80%;
+                }
+                .about-path-info h2 {
+                    font-size: 40px;
+                }
+                .about-path-info p {
+                    font-size: 25px;
+                }
+                .skills {
+                    grid-area: text;
+                    margin-top: 50px;
+                    margin-left: 20px;
+                    width: 80%;
+                }
+                .skills-text h2 {
+                    font-size: 40px;
+                }
+                .skills-text p {
+                    font-size: 25px;
+                }
+                .portfolio {
+                    margin-left: 20px;
+                    width: 80%;
+                }
+                .portfolio-path h2 {
+                    font-size: 40px;
+                }
+                .portfolio-path p {
+                    font-size: 25px;
+                }
+                .contacts {
+                    margin-left: 20px;
+                    width: 80%;
+                }
+                .contacts-info h2 {
+                    font-size: 40px;
+                }
+                .contacts-info p {
+                    font-size: 25px;
+                }
+                .button-send {
+                    font-size: 25px;
+                    border-radius: 30px;
+                    height: 70px;
+                    width: 210px;
+                }
+                .social_icons {
+                    margin-left: 80px;
+                    width: 100%;
+                }
+                .git,
+                .face,
+                .inst,
+                .link {
+                    font-size: 45px;
+                }
+            }
